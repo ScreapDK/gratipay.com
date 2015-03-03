@@ -36,6 +36,9 @@ class PlatformRegistry(object):
     def __iter__(self):
         return iter(self.__dict__.values())
 
+    def __getitem__(self, item):
+        return self.__dict__.__getitem__(item)
+
 
 class UserInfo(object):
     """A simple container for a user's info.
