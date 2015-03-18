@@ -27,8 +27,8 @@ env: requirements.txt requirements_tests.txt setup.py
 				--always-copy \
 				./env/
 	$(pip) install ./vendor/wheel-0.24.0-py2.py3-none-any.whl --no-index
-	$(pip) wheel -r requirements.txt -f ./vendor --wheel-dir=$(wheel_cache)
-	$(pip) wheel -r requirements_tests.txt -f ./vendor --wheel-dir=$(wheel_cache)
+	$(pip) wheel -f ./vendor/ --wheel-dir=$(wheel_cache) -r requirements.txt
+	$(pip) wheel -f ./vendor/ --wheel-dir=$(wheel_cache) -r requirements_tests.txt
 	$(pip) install -r requirements.txt --no-index -f ./vendor -f $(wheel_cache)
 	$(pip) install -r requirements_tests.txt --no-index -f ./vendor -f $(wheel_cache)
 	$(pip) install -e ./
