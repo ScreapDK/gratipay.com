@@ -10,6 +10,8 @@ pip := $(env_bin)/pip
 honcho := $(env_bin)/honcho
 honcho_run := $(honcho) run -e defaults.env,local.env
 py_test := $(honcho) run -e $(test_env_files) $(env_bin)/py.test
+wheel_cache := $(HOME)/.cache/pip/wheels
+
 
 ifdef PYTEST
 	pytest = ./tests/py/$(PYTEST)
@@ -21,8 +23,11 @@ env: requirements.txt requirements_tests.txt setup.py
 	$(python) $(venv) \
 				--prompt="[gratipay] " \
 				--extra-search-dir=./vendor/ \
+				--extra-search-dir=$(wheel_cache) \
 				--always-copy \
 				./env/
+	$(pip) wheel -r requirements.txt --wheel-dir=$(wheel_cache)
+	$(pip) wheel -r requirements_tests.txt --wheel-dir=$(wheel_cache)
 	$(pip) install -r requirements.txt --no-index
 	$(pip) install -r requirements_tests.txt --no-index
 	$(pip) install -e ./
