@@ -20,6 +20,7 @@ else
 endif
 
 env: requirements.txt requirements_tests.txt setup.py
+	mkdir -p $(wheel_cache)
 	$(python) $(venv) \
 				--prompt="[gratipay] " \
 				--extra-search-dir=./vendor/ \
