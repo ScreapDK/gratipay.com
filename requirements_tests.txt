@@ -1,17 +1,17 @@
 
-py-1.4.26.tar.gz
-pytest-2.6.4.tar.gz
+py==1.4.26
+pytest==2.6.4
 
-coverage-3.7.1.tar.gz
-cov-core-1.15.0.tar.gz
-pytest-cov-1.8.1.tar.gz
+coverage==3.7.1
+cov-core==1.15.0
+pytest-cov==1.8.1
 
-execnet-1.3.0-py2.py3-none-any.whl
-pytest-cache-1.0.tar.gz
-pyflakes-0.8.1.tar.gz
-mock-1.0.1.tar.gz
+execnet==1.3.0
+pytest-cache==1.0
+pyflakes==0.8.1
+mock==1.0.1
 
-PyYAML-3.11.tar.gz
-contextlib2-0.4.0.tar.gz
-wrapt-1.10.2.tar.gz
-vcrpy-1.1.3.tar.gz
+PyYAML==3.11
+contextlib2==0.4.0
+wrapt==1.10.2
+vcrpy==1.1.3
